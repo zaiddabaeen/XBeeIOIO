@@ -5,20 +5,18 @@
 
 XBeeIOIO is an open-source library that allows the Android device to communicate with [Xbee](http://www.digi.com/xbee/), a ZigBee module, through [IOIO](https://github.com/ytai/ioio).
 
-> This also works for the IOIO-OTG.
-
 XBeeIOIO is well documented, and the docs are available in the root folder of this repo.
 
 ##Setup
 
 Connect the Xbee and the IOIO as follows:
 
-| Xbee        | IOIO          | 
-| ----------- |:-------------:| 
+| Xbee        | IOIO           | 
+| ------------- |:-------------:| 
 | VIN      | 3.3V | 
-| GND      | GND  | 
-| DIN | UART Pin  |
-| DOUT | UART Pin |
+| GND      | GND      | 
+| DIN | UART Pin      |
+| DOUT | UART Pin      |
 
 Add the IOIO libraries to your workspace. Add then the XbeeIOIO library to your workspace and add it to your project's java build path.
 
