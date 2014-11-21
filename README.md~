@@ -7,7 +7,7 @@ XBeeIOIO is an open-source library that allows the Android device to communicate
 
 XBeeIOIO is well documented, and the docs are available in the root folder of this repo.
 
-##Usage
+##Setup
 
 Connect the Xbee and the IOIO as follows:
 
@@ -18,8 +18,11 @@ Connect the Xbee and the IOIO as follows:
 | DIN | UART Pin      |
 | DOUT | UART Pin      |
 
+Add the IOIO libraries to your workspace. Add then the XbeeIOIO library to your workspace and add it to your project's java build path.
 
-In the setup method of the BaseIOIOLooper, declare an Xbee object, and initialize it:
+##Usage
+
+Declare an Xbee object, and in the setup method of the BaseIOIOLooper initialize it:
 
 ```java
 	xbee = new Xbee(ioio_,45,46,9600);
@@ -36,5 +39,10 @@ Set up the onDataReceivedListener:
 					});
 ```
 
+To write to the output stream use:
+
+```java
+	xbee.write("Writing this to output stream");
+```
 
 

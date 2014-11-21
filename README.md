@@ -28,13 +28,21 @@ Declare an Xbee object, and in the setup method of the BaseIOIOLooper initialize
 	xbee = new Xbee(ioio_,45,46,9600);
 ```
 
-Set up the onDataReceivedListener:
+Optionally, set up the onDataReceivedListener, and the onDataSentListener:
 
 ```java
+
+	xbee.setOnDataReceivedListener(new OnDataReceivedListener() {
+						@Override
+						public void onDataReceived(String data) {
+							// Use data
+						}
+					};
+
 	xbee.setOnDataSentListener(new OnDataSentListener() {
 						@Override
 						public void onDataSent(String data) {
-							log(data, Direction.Out);
+							// Use data
 						}
 					});
 ```
