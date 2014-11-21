@@ -1,7 +1,7 @@
 #XBeeIOIO
 ========
 
-**Requirements: Android 2.3.3+ (API 10)**
+**Requirements: Android 2.2+ (API 8)**
 
 XBeeIOIO is an open-source library that allows the Android device to communicate with [Xbee](http://www.digi.com/xbee/), a ZigBee module, through [IOIO](https://github.com/ytai/ioio).
 
