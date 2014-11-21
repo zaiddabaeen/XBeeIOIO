@@ -37,7 +37,7 @@ Optionally, set up the onDataReceivedListener, and the onDataSentListener:
 						public void onDataReceived(String data) {
 							// Use data
 						}
-					};
+					});
 
 	xbee.setOnDataSentListener(new OnDataSentListener() {
 						@Override
