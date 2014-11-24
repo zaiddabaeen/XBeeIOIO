@@ -59,4 +59,47 @@ To write to the output stream use:
 	xbee.write("Writing this to output stream");
 ```
 
+##More options
+- To put your data into a packet format, you can construct packet format using JSON. Example:
+```java
+	/** Constructs a JSON-formatted packet.
+	 * 
+	 * @param data Data of the packet.
+	 * @return A readable string of the JSON object.
+	 */
+	private String constructPacket(String data) {
+
+		JSONObject jPacket = new JSONObject();
+
+		try {
+			jPacket.put("src", SOURCE_ADDRESS);
+			jPacket.put("dest", DESTINATION_ADDRESS);
+			jPacket.put("data", data);
+			jPacket.put("fcs", getCRC(data));
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+		return jPacket.toString();
+
+	}
+```
+
+- To enable CRC checking, you may use the following methods:-
+```java
+	/**
+	 * 
+	 * @param data The data to get its CRC.
+	 * @return A hex string of the CRC value (FCS).
+	 */
+	public String getCRC(String data){
+		CRC32 crc = new CRC32();
+		crc.update(data.getBytes());
+		String FCS = Long.toHexString(crc.getValue());
+		crc.reset();
+		return FCS;
+	}
+```
+The returned value (FCS) from this method must be added separately to the data sent in order to check it on the receiver side. On the receiver side, run getCRC on the received data, if the FCS equals the returned value, then the data received is correct.
+
 
