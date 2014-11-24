@@ -13,6 +13,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.zip.CRC32;
 
+import org.json.JSONObject;
+
 import android.os.Handler;
 import android.util.Log;
 
@@ -379,9 +381,16 @@ protected IOIOLooper createIOIOLooper() {
 
 	}
 
+	/** Writes message to the buffer 200 bytes at a time.
+	 * 
+	 * @param message The string data to be written
+	 * @throws IOException Thread was not able to sleep
+	 */
 	private void writeToBuffer(String message) throws IOException {
 
 		int len = message.length();
+		if(len==0) return;
+		
 		byte[] bytes = message.getBytes();
 
 		for(int i=0; i < len ; i++){
@@ -390,6 +399,13 @@ protected IOIOLooper createIOIOLooper() {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+			}
+			if(len % 200 == 0){
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 
