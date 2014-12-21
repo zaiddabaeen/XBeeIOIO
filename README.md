@@ -34,6 +34,18 @@ Declare an Xbee object, and in the setup method of the BaseIOIOLooper initialize
 
 > Where 45 and 46 are UART compatible pins.
 
+To configure your XBee:
+
+```java
+    xbee.configure(
+        new XbeeConfiguration(xbee).setBaudRate()
+        .setDestinationAddress(0x4F)
+        .setSourceAddress(0x32)
+        .setPanID(0x12).writeToNonVolatileMemory(), null);
+```
+
+> Where the baud rate is the set baud rate at declaration (9600), destination address is 0x4F, source address is 0x32 and Personal Area Network (PAN) ID is 0x32. Write to non-volatile memory.
+
 Optionally, set up the onDataReceivedListener, and the onDataSentListener:
 
 ```java
