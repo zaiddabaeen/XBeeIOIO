@@ -160,7 +160,8 @@ protected IOIOLooper createIOIOLooper() {
 			if(plusRetry==-1){
 				Log.e(TAG, "configure: No reply was received from the Xbee. Aborting.");
 				isConfiguring = false;
-				return null;
+				throw new IOException();
+				//return null;
 			}
 			readBuffer = safeReadBuffer(5);
 			if(readBuffer.length()>0&&onDataReceivedListener!=null) onDataReceivedListener.onDataReceived(readBuffer);
@@ -172,6 +173,7 @@ protected IOIOLooper createIOIOLooper() {
 		if(replyCommand.length()>0&&onDataReceivedListener!=null) onDataReceivedListener.onDataReceived(replyCommand);
 		if(replyCommand.contains("ERROR")){
 			Log.e(TAG, "configure: Error occured while configuring. Check the configuration values.");
+			throw new IOException();
 		}
 		
 		/*if(replyAfterOK){
@@ -188,7 +190,7 @@ protected IOIOLooper createIOIOLooper() {
 		if(!readBuffer.contains("OK")){
 			Log.e(TAG, "configure: Unable to close configuration. Aborting.");
 			isConfiguring = false;
-			return null;
+			throw new IOException();
 		}
 
 		Log.i(TAG, "configure: Configuration completed successfully");
