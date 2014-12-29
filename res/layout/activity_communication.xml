@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/allLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
 
     <LinearLayout
         android:id="@+id/chatLayout"
@@ -27,7 +29,6 @@
                 android:imeActionLabel="Send"
                 android:inputType="text"
                 android:textColor="#FFFFFF" >
-
             </EditText>
 
             <Button
@@ -111,9 +112,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:orientation="horizontal" 
             android:clickable="true"
-            android:onClick="GetLight">
+            android:onClick="GetLight"
+            android:orientation="horizontal" >
 
             <View
                 android:id="@+id/indLight"
@@ -132,18 +133,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="22sp"
-                android:text="-" />
-
+                android:text="-"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:orientation="horizontal" 
             android:clickable="true"
-            android:onClick="GetCO">
+            android:onClick="GetCO"
+            android:orientation="horizontal" >
 
             <View
                 android:id="@+id/indCO"
@@ -155,27 +155,27 @@
                 android:id="@+id/iCO"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:text="CO"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textSize="40sp" />
+                android:text="CO"
+                android:textSize="40sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tCO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="22sp"
-                android:text="-" />
+                android:text="-"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:orientation="horizontal" 
             android:clickable="true"
-            android:onClick="GetTemp">
+            android:onClick="GetTemp"
+            android:orientation="horizontal" >
 
             <View
                 android:id="@+id/indTemp"
@@ -194,8 +194,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="22sp"
-                android:text="-" />
+                android:text="-"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <ToggleButton
@@ -203,10 +203,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textOff="LED Off"
-            android:textOn="LED On"
             android:layout_margin="5dp"
-            android:onClick="ControlLight" />
+            android:onClick="ControlLight"
+            android:textOff="LED Off"
+            android:textOn="LED On" />
 
         <TextView
             android:layout_width="match_parent"
@@ -214,7 +214,6 @@
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="Tap on any of the indicators to update it" />
-
     </LinearLayout>
 
     <RelativeLayout
@@ -222,7 +221,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#DD222222"
-        android:visibility="visible">
+        android:visibility="visible" >
 
         <ProgressBar
             android:id="@+id/progress"
@@ -250,11 +249,10 @@
             android:layout_below="@+id/tStatus"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp"
-            android:textColor="#FFFFFFFF"
-            android:visibility="gone"
             android:onClick="RetryConnection"
-            android:text="Retry" />
-
+            android:text="Retry"
+            android:textColor="#FFFFFFFF"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -112,7 +112,7 @@ public class CommunicationActivity extends IOIOActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_communication);
 
-		getActionBar().setHomeButtonEnabled(true);
+		//getActionBar().setHomeButtonEnabled(true);
 
 		context = this;
 		mHandler = new Handler();
