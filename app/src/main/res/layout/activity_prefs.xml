@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_gravity="center"
+    tools:context=".PrefsActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="PAN ID: " />
+
+    <EditText
+        android:id="@+id/eTpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:hint="PAN ID" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Source Address: " />
+
+    <EditText
+        android:id="@+id/eTsource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:hint="Source Address" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Destination Address: " />
+
+    <Spinner
+        android:id="@+id/spDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:entries="@array/dest_adr" />
+
+    <EditText
+        android:id="@+id/eTdestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="right"
+        android:hint="Destination Address" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Baud Rate: " 
+        android:visibility="gone"/>
+
+    <Spinner
+        android:id="@+id/spBaud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/baud_rates"
+        android:hint="Baud Rate" 
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/bSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="Setup"
+        android:layout_marginTop="20dp"
+        android:text="Save Configuration" />
+
+</LinearLayout>

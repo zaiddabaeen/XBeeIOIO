@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+  android:shape="rectangle"> 
+  <gradient 
+  android:startColor="#D2EEF7" 
+  android:endColor="#FFFFFFFF" 
+  android:angle="180"/> 
+</shape><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/drawable/grad_in.xml --><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/drawable/grad_in.xml -->

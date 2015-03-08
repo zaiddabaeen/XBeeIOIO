@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vF"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+  <!--   0) Right
+    1) Left
+    2) Center -->
+       
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D2EEF7"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tvTextR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="00:00"
+            android:textColor="#5C5C5C"
+            android:textSize="12sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#92BBD1"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tvTimeL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="00:00"
+            android:textColor="#5C5C5C"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvTextL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tvTimeC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="00:00"
+            android:textColor="#8F8F8F"
+            android:textSize="12sp" />
+        
+        <TextView
+            android:id="@+id/tvTextC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="#F5F5F5"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ViewFlipper><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/layout/view_logitem.xml -->

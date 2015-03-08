@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ioiolibandroiddevice">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/ioiolibandroiddevice.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

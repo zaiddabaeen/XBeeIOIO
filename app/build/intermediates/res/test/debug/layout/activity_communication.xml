@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/allLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#00354F"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/eTmessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Type your message here"
+                android:imeActionLabel="Send"
+                android:inputType="text"
+                android:textColor="#FFFFFF" >
+            </EditText>
+
+            <Button
+                android:id="@+id/bSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="SendMessage"
+                android:text="Send"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/llLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+
+        <!--
+                 <TextView
+                android:id="@+id/tVlog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ToggleButton
+                android:id="@+id/tYellowB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Test OFF"
+                android:textOn="Test ON" />
+
+            <ToggleButton
+                android:id="@+id/tLED"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="ToggleLED"
+                android:textOff="LED OFF"
+                android:textOn="LED ON" />
+
+            <CheckBox
+                android:id="@+id/cBcr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="CR" />
+
+            <Button
+                android:id="@+id/bDiscover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="DiscoverNodes"
+                android:text="Discover" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#FFFFFFFF"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:onClick="GetLight"
+            android:orientation="horizontal" >
+
+            <View
+                android:id="@+id/indLight"
+                android:layout_width="10dp"
+                android:layout_height="100dp"
+                android:background="#FFFF0000" />
+
+            <ImageView
+                android:id="@+id/iLight"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/light_bulb" />
+
+            <TextView
+                android:id="@+id/tLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="-"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:onClick="GetCO"
+            android:orientation="horizontal" >
+
+            <View
+                android:id="@+id/indCO"
+                android:layout_width="10dp"
+                android:layout_height="100dp"
+                android:background="#FF00FF00" />
+
+            <TextView
+                android:id="@+id/iCO"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="CO"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tCO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="-"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:onClick="GetTemp"
+            android:orientation="horizontal" >
+
+            <View
+                android:id="@+id/indTemp"
+                android:layout_width="10dp"
+                android:layout_height="100dp"
+                android:background="#FFFFee55" />
+
+            <ImageView
+                android:id="@+id/iTemp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/temperature_icon" />
+
+            <TextView
+                android:id="@+id/tTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="-"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/bLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:onClick="ControlLight"
+            android:textOff="LED Off"
+            android:textOn="LED On" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="Tap on any of the indicators to update it" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD222222"
+        android:visibility="visible" >
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Waiting for IOIO connection"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/bRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tStatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:onClick="RetryConnection"
+            android:text="Retry"
+            android:textColor="#FFFFFFFF"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/layout/activity_communication.xml --><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/layout/activity_communication.xml -->
