@@ -68,7 +68,7 @@ Optionally, set up the onDataReceivedListener, and the onDataSentListener:
 To write to the output stream use:
 
 ```java
-	xbee.writeLine(“Writing this to output stream");
+	xbee.writeLine("Writing this to output stream");
 ```
 
 ##More options
