@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <translate android:fromXDelta="0%" android:toXDelta="100%" android:duration="300"/>
-</set><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/anim/slide_right_out.xml --><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/anim/slide_right_out.xml -->
+</set><!-- From: file:/Users/redtroops/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/anim/slide_right_out.xml --><!-- From: file:/Users/redtroops/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/anim/slide_right_out.xml -->

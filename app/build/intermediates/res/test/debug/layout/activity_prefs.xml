@@ -87,4 +87,4 @@
         android:layout_marginTop="20dp"
         android:text="Save Configuration" />
 
-</LinearLayout><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/layout/activity_prefs.xml --><!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/layout/activity_prefs.xml -->
+</LinearLayout><!-- From: file:/Users/redtroops/ZedBox/AndroidStudioProjects/XbeeIOIO/app/src/main/res/layout/activity_prefs.xml --><!-- From: file:/Users/redtroops/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/layout/activity_prefs.xml -->

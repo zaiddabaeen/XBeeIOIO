@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/samertarazi/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/values/values.xml -->
+    <!-- From: file:/Users/redtroops/ZedBox/AndroidStudioProjects/XbeeIOIO/app/build/intermediates/bundles/debug/res/values/values.xml -->
     <eat-comment/>
     <string-array name="baud_rates">
         <item>1200 bps</item>

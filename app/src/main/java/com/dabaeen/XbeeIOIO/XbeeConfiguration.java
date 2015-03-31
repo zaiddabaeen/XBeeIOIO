@@ -126,6 +126,22 @@ public class XbeeConfiguration {
 
 	}
 
+    /** Sets the Xbee device as a coordinator or end-device.</br>
+     * Default Parameter Value: Disable
+     *
+     * @param enable True to enable coordinator mode.
+     *
+     * @return The XbeeConfiguration instance.
+     */
+    public XbeeConfiguration setCoordinatorEnable(boolean enable){
+
+        configurationString += "CE";
+        configurationString += enable?"1":"0";
+        configurationString += ",";
+
+        return this;
+    }
+
 	/** Writes the current configuration the non-volatile memory. Parameter values remain
 	 * in the module's memory until overwritten by subsequent use of this command. </br></br>
 	 * <strong> This must be the last method to call before configuring.</strong>
@@ -217,14 +233,14 @@ public class XbeeConfiguration {
 		int nodeArrLength = nodeArr.length;
 
 		try{
-			for(int i = 0; i < nodeArrLength ; i+= 6){
-				if(i + 5 > nodeArrLength) {
+			for(int i = 0; i < nodeArrLength ; i+= 5){
+				if(i + 4 > nodeArrLength) {
 					Log.w(TAG, "parseNodeDiscovery: Remaining fields are not enough. Break.");
-					break; // Ensures that there are 6 entries to read. The 6th is empty.
+					break; // Ensures that there are 5 entries to read. The 5th is empty.
 				}
 
-				Node node = new Node(Integer.parseInt(nodeArr[i]), Integer.parseInt(nodeArr[i+1]), Integer.parseInt(nodeArr[i+2]), 
-						Integer.parseInt(nodeArr[i+3]), nodeArr[i+4]);
+				Node node = new Node(getIntFromHex(nodeArr[i]), getIntFromHex(nodeArr[i+1]), getIntFromHex(nodeArr[i+2]),
+                        getIntFromHex(nodeArr[i+3]), nodeArr[i+4]);
 				Log.i(TAG, "parseNodeDiscovery: " + node.toString());
 				nodes.add(node);
 			}
@@ -261,6 +277,7 @@ public class XbeeConfiguration {
 	private String getHex(int value){
 		return Integer.toHexString(value);
 	}
+    private static int getIntFromHex(String hex) { return Integer.parseInt(hex, 16); }
 
 	/** Returns the corresponding baud of the Xbee module as specified in Xbee's datasheet.
 	 * 
