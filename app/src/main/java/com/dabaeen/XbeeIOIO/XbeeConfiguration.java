@@ -36,6 +36,7 @@ public class XbeeConfiguration {
 	/** The time required for the command to be received by the Xbee module. Default is 500msec. */
 	protected int timeRequired = 500;
 	protected boolean replyAfterOK = false;
+    protected boolean keepOpen = false;
 
 	private Xbee xbee;
 
@@ -190,7 +191,7 @@ public class XbeeConfiguration {
 		configurationString += "ND,";
 
 		replyAfterOK = true;
-		setTimeRequired(2200);
+		setTimeRequired(1000);
 
 		return this;
 	}
@@ -204,6 +205,14 @@ public class XbeeConfiguration {
         configurationString += "CE,";
 
         return this;
+    }
+
+    public XbeeConfiguration keepConfigurationOpen(){
+
+        keepOpen = true;
+
+        return this;
+
     }
 
     /** Writes any command.
@@ -233,8 +242,8 @@ public class XbeeConfiguration {
 		int nodeArrLength = nodeArr.length;
 
 		try{
-			for(int i = 0; i < nodeArrLength ; i+= 5){
-				if(i + 4 > nodeArrLength) {
+			for(int i = 0; i < nodeArrLength ; i+= 6){
+				if(i + 5 > nodeArrLength) {
 					Log.w(TAG, "parseNodeDiscovery: Remaining fields are not enough. Break.");
 					break; // Ensures that there are 5 entries to read. The 5th is empty.
 				}
