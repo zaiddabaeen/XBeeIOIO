@@ -116,6 +116,6 @@ The returned value (FCS) from this method must be added separately to the data s
 
 ##Credits
 
-This project is developed by Zaid Daba'een and is licensed under GNU GPLv2.
+This project is developed by [Zaid Daba'een](https://github.com/zaiddabaeen) and is licensed under [GNU GPLv2](https://github.com/zaiddabaeen/XBeeIOIO/blob/master/LICENSE).
 
 
