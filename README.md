@@ -114,4 +114,8 @@ To write to the output stream use:
 ```
 The returned value (FCS) from this method must be added separately to the data sent in order to check it on the receiver side. On the receiver side, run getCRC on the received data, if the FCS equals the returned value, then the data received is correct.
 
+##Credits
+
+This project is developed by Zaid Daba'een and is licensed under GNU GPLv2.
+
 
